@@ -1,20 +1,28 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Ionic Input Masks
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-button expand="block" (click)="setValue()">Set Value</ion-button>
+  <ion-item>
+    <ion-input [(ngModel)]="a" label="Cool number" [maskito]="digitsOnlyMask" [maskitoElement]="predicate"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Time" [maskito]="timeMask" [maskitoElement]="predicate"></ion-input>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-input label="Name" [maskito]="uppercaseMask" [maskitoElement]="predicate"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Number" [maskito]="numberMask" [maskitoElement]="predicate"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input #cvv label="CVV" [maskito]="options" [maskitoElement]="predicate"></ion-input>
+  </ion-item>
 </ion-content>
